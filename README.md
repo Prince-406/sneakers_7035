@@ -28,7 +28,7 @@ To run this project locally on your machine:
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/YOUR_GITHUB_USERNAME/sneakers-ecommerce.git](https://github.com/YOUR_GITHUB_USERNAME/sneakers-ecommerce.git)
+git clone https://github.com/Prince-406/sneakers_7035.git
 
 # 2. Navigate into the project directory
 cd sneakers-ecommerce
