@@ -1,0 +1,261 @@
+import { Product } from '@/types';
+
+export const products: Product[] = [
+  {
+    id: 'air-nova-01',
+    name: 'Air Nova Pro',
+    brand: 'Sneakers',
+    category: 'men',
+    price: 125,
+    originalPrice: 250,
+    discount: 50,
+    rating: 4.8,
+    reviewCount: 2847,
+    description:
+      'The Air Nova Pro redefines what a performance sneaker can be. Built with our proprietary AirFlex cushioning technology, every step feels like walking on air. The seamless knit upper adapts to your foot shape while providing breathability for all-day wear.',
+    features: [
+      'AirFlex cushioning sole',
+      'Seamless knit upper',
+      'Recycled material construction',
+      'Anti-slip outsole',
+      'Removable insole',
+      'Machine washable',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12],
+    availableSizes: [7.5, 8, 8.5, 9, 9.5, 10, 11],
+    colors: ['#F5F5F5', '#1C1917', '#E07B39'],
+    badge: '50% OFF',
+    isBestSeller: true,
+  },
+  {
+    id: 'street-edge-02',
+    name: 'Street Edge Classic',
+    brand: 'Sneakers',
+    category: 'men',
+    price: 89,
+    originalPrice: 130,
+    discount: 31,
+    rating: 4.6,
+    reviewCount: 1203,
+    description:
+      'Street-ready style meets everyday comfort. The Street Edge Classic features a durable canvas upper and rubber vulcanized sole that handles city life with ease.',
+    features: [
+      'Canvas upper',
+      'Vulcanized rubber sole',
+      'Padded collar',
+      'Ortholite insole',
+      'Metal eyelets',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1584735175315-9d5df23be620?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12],
+    availableSizes: [7, 8, 9, 10, 11, 12],
+    colors: ['#1C1917', '#FFFFFF', '#4A4A4A'],
+    badge: 'New Arrival',
+    isNew: true,
+  },
+  {
+    id: 'cloud-run-03',
+    name: 'Cloud Run Ultra',
+    brand: 'Sneakers',
+    category: 'men',
+    price: 160,
+    originalPrice: 200,
+    discount: 20,
+    rating: 4.9,
+    reviewCount: 3412,
+    description:
+      'Marathon-proven. Daily-driven. The Cloud Run Ultra features our most advanced cushioning platform paired with a carbon fiber plate for explosive energy return.',
+    features: [
+      'Carbon fiber plate',
+      'CloudFoam+ midsole',
+      'Engineered mesh upper',
+      'Heel counter',
+      'Reflective details',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1539185441755-769473a23570?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12],
+    availableSizes: [8, 8.5, 9, 9.5, 10, 10.5],
+    colors: ['#FFFFFF', '#E07B39', '#2D4A8A'],
+    isBestSeller: true,
+  },
+  {
+    id: 'velvet-runner-04',
+    name: 'Velvet Runner',
+    brand: 'Sneakers',
+    category: 'women',
+    price: 115,
+    originalPrice: 175,
+    discount: 34,
+    rating: 4.7,
+    reviewCount: 2156,
+    description:
+      'Designed for the woman who refuses to choose between style and performance. The Velvet Runner features a premium suede-effect upper with our signature cushioning sole.',
+    features: [
+      'Suede-effect upper',
+      'Memory foam insole',
+      'Flexible outsole',
+      'Breathable lining',
+      'Padded tongue',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1554568218-0f1715e72254?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10],
+    availableSizes: [5.5, 6, 6.5, 7, 7.5, 8],
+    colors: ['#D4A5A5', '#FFFFFF', '#C8B8D4'],
+    badge: '34% OFF',
+  },
+  {
+    id: 'nova-lite-05',
+    name: 'Nova Lite W',
+    brand: 'Sneakers',
+    category: 'women',
+    price: 95,
+    originalPrice: 140,
+    discount: 32,
+    rating: 4.5,
+    reviewCount: 987,
+    description:
+      'Ultralight construction meets bold style. At just 6oz, the Nova Lite W is barely-there comfort with maximum visual impact.',
+    features: [
+      'Ultra-lightweight upper',
+      'Compression-molded midsole',
+      'Continental rubber outsole',
+      'Sock-like fit',
+      'Recycled materials',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1560072810-1cffb09faf0f?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10],
+    availableSizes: [5, 6, 6.5, 7, 8, 9],
+    colors: ['#F5F5F5', '#E8D5C4', '#B8C4D4'],
+    isNew: true,
+  },
+  {
+    id: 'apex-high-06',
+    name: 'Apex High Top',
+    brand: 'Sneakers',
+    category: 'unisex',
+    price: 145,
+    originalPrice: 190,
+    discount: 24,
+    rating: 4.6,
+    reviewCount: 1678,
+    description:
+      'The Apex High Top is a cultural icon reimagined. Premium leather upper meets modern cushioning technology for a sneaker that bridges heritage and innovation.',
+    features: [
+      'Full-grain leather upper',
+      'Ankle support collar',
+      'Foam-padded lining',
+      'Vulcanized outsole',
+      'Leather lining',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1556906781-9a412961a28c?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 11, 12],
+    availableSizes: [7, 7.5, 8, 9, 10, 11],
+    colors: ['#FFFFFF', '#1C1917', '#8B4513'],
+    isBestSeller: true,
+  },
+  {
+    id: 'drift-low-07',
+    name: 'Drift Low',
+    brand: 'Sneakers',
+    category: 'men',
+    price: 79,
+    originalPrice: 110,
+    discount: 28,
+    rating: 4.4,
+    reviewCount: 743,
+    description:
+      'Minimal profile, maximum versatility. The Drift Low is the everyday sneaker perfected — clean lines, premium materials, effortless style.',
+    features: [
+      'Nubuck leather upper',
+      'EVA midsole',
+      'Rubber outsole',
+      'Cushioned footbed',
+      'Tonal laces',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12],
+    availableSizes: [7.5, 8.5, 9, 9.5, 10, 10.5, 11],
+    colors: ['#C4B49A', '#1C1917', '#FFFFFF'],
+  },
+  {
+    id: 'luna-glide-08',
+    name: 'Luna Glide',
+    brand: 'Sneakers',
+    category: 'women',
+    price: 130,
+    originalPrice: 165,
+    discount: 21,
+    rating: 4.8,
+    reviewCount: 1892,
+    description:
+      'Engineered for the long run. The Luna Glide combines a precision-fit upper with our most responsive foam compound for effortless miles.',
+    features: [
+      'Precision-knit upper',
+      'LunaFoam midsole',
+      'Traction outsole',
+      'Dynamic lacing system',
+      'Breathable mesh lining',
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=800&auto=format&fit=crop&q=80',
+    ],
+    sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10],
+    availableSizes: [5.5, 6, 7, 7.5, 8, 8.5, 9],
+    colors: ['#E8D5C4', '#2D4A8A', '#FFFFFF'],
+    isBestSeller: true,
+  },
+];
+
+export const getFeaturedProducts = (): Product[] =>
+  products.filter((p) => p.isBestSeller || p.isNew).slice(0, 4);
+
+export const getMensProducts = (): Product[] =>
+  products.filter((p) => p.category === 'men' || p.category === 'unisex');
+
+export const getWomensProducts = (): Product[] =>
+  products.filter((p) => p.category === 'women' || p.category === 'unisex');
+
+export const getProductById = (id: string): Product | undefined =>
+  products.find((p) => p.id === id);
+
+export const getRelatedProducts = (id: string, limit = 4): Product[] =>
+  products.filter((p) => p.id !== id).slice(0, limit);
