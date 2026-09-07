@@ -64,6 +64,7 @@ function CategoryCard({
         src={image}
         alt={alt}
         fill
+        loading="lazy"
         sizes="(max-width: 1024px) 100vw, 50vw"
         className="object-cover transition-transform duration-1000 group-hover:scale-105"
       />

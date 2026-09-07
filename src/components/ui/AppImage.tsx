@@ -29,7 +29,7 @@ const AppImage = memo(function AppImage({
     height,
     className = '',
     priority = false,
-    quality = 85,
+    quality = 80,
     placeholder = 'empty',
     blurDataURL,
     fill = false,
@@ -44,8 +44,8 @@ const AppImage = memo(function AppImage({
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    const isExternalUrl = useMemo(() => typeof imageSrc === 'string' && imageSrc.startsWith('http'), [imageSrc]);
-    const resolvedUnoptimized = unoptimized || isExternalUrl;
+    // Only unoptimize if explicitly requested — allow Next.js to optimize external URLs
+    const resolvedUnoptimized = unoptimized;
 
     const handleError = useCallback(() => {
         if (!hasError && imageSrc !== fallbackSrc) {
@@ -82,6 +82,7 @@ const AppImage = memo(function AppImage({
 
         if (priority) {
             baseProps.priority = true;
+            baseProps.fetchPriority = 'high';
         } else {
             baseProps.loading = loading;
         }
@@ -95,15 +96,13 @@ const AppImage = memo(function AppImage({
 
     if (fill) {
         return (
-            <div className="relative" style={{ width: '100%', height: '100%' }}>
-                <Image
-                    {...imageProps}
-                    fill
-                    sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-                    style={{ objectFit: 'cover' }}
-                    {...props}
-                />
-            </div>
+            <Image
+                {...imageProps}
+                fill
+                sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+                style={{ objectFit: 'cover' }}
+                {...props}
+            />
         );
     }
 

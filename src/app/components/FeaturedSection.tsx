@@ -21,15 +21,13 @@ export default function FeaturedSection({ products }: FeaturedSectionProps) {
         if (entry.isIntersecting) {
           el.querySelectorAll('.product-card-reveal').forEach((item, i) => {
             const htmlItem = item as HTMLElement;
-            setTimeout(() => {
-              htmlItem.style.opacity = '1';
-              htmlItem.style.transform = 'translateY(0)';
-            }, i * 100);
+            htmlItem.style.transitionDelay = `${i * 80}ms`;
+            htmlItem.classList.add('product-card-visible');
           });
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -63,12 +61,6 @@ export default function FeaturedSection({ products }: FeaturedSectionProps) {
             <div
               key={product.id}
               className="product-card-reveal"
-              style={{
-                opacity: 0,
-                transform: 'translateY(30px)',
-                transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-                transitionDelay: `${i * 100}ms`,
-              }}
             >
               <ProductCard product={product} />
             </div>

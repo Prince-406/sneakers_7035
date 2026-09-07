@@ -255,4 +255,26 @@
     background-color: var(--muted);
     color: var(--muted-foreground);
   }
+
+  /* Product card reveal — starts visible, animates when .product-card-visible is added */
+  .product-card-reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  /* Hero CSS animations — no JS needed, no CLS */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.9s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  /* content-visibility for below-fold sections */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
 }

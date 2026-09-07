@@ -1,59 +1,21 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const elements = [
-    { el: badgeRef?.current, delay: 100 },
-    { el: headlineRef?.current, delay: 250 },
-    { el: ctaRef?.current, delay: 450 }];
-
-
-    elements?.forEach(({ el, delay }) => {
-      if (!el) return;
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(40px)';
-      setTimeout(() => {
-        if (!el) return;
-        el.style.transition = 'opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)';
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, delay);
-    });
-
-    if (imageRef?.current) {
-      imageRef.current.style.opacity = '0';
-      imageRef.current.style.transform = 'translateX(60px)';
-      setTimeout(() => {
-        if (!imageRef?.current) return;
-        imageRef.current.style.transition = 'opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1)';
-        imageRef.current.style.opacity = '1';
-        imageRef.current.style.transform = 'translateX(0)';
-      }, 200);
-    }
-  }, []);
-
   return (
     <section
-      ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-background pt-16 lg:pt-20">
       
       {/* Animated background blobs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div
           className="absolute blob-primary animate-blob"
-          style={{ width: '600px', height: '600px', top: '-100px', left: '-150px' }} />
+          style={{ width: '600px', height: '600px', top: '-100px', left: '-150px', willChange: 'border-radius' }} />
         
         <div
           className="absolute blob-secondary animate-blob"
@@ -62,7 +24,8 @@ export default function HeroSection() {
             height: '400px',
             bottom: '0',
             right: '-100px',
-            animationDelay: '4s'
+            animationDelay: '4s',
+            willChange: 'border-radius'
           }} />
         
         <div
@@ -76,17 +39,16 @@ export default function HeroSection() {
             filter: 'blur(60px)',
             opacity: '0.06'
           }} />
-        
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Text */}
-          <div className="space-y-8 relative z-10">
+          <div className="space-y-8 relative z-10 animate-fade-in-up">
             {/* Badge */}
-            <div ref={badgeRef}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/8 backdrop-blur-sm">
-                <span className="flex h-2 w-2 rounded-full bg-primary animate-ping" />
+                <span className="flex h-2 w-2 rounded-full bg-primary animate-ping" aria-hidden="true" />
                 <span className="text-xs font-bold tracking-widest uppercase text-primary">
                   New Collection 2026
                 </span>
@@ -94,7 +56,7 @@ export default function HeroSection() {
             </div>
 
             {/* Headline */}
-            <div ref={headlineRef}>
+            <div>
               <h1 className="text-hero-xl font-bold text-foreground">
                 Move in
                 <br />
@@ -107,7 +69,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTAs */}
-            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/collections"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-bold text-base hover:bg-accent transition-all duration-300 shadow-lg group"
@@ -126,7 +88,7 @@ export default function HeroSection() {
 
             {/* Social proof */}
             <div className="flex items-center gap-4 pt-2">
-              <div className="flex -space-x-2">
+              <div className="flex -space-x-2" aria-hidden="true">
                 {[
                 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face',
                 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face',
@@ -136,21 +98,20 @@ export default function HeroSection() {
                 <div
                   key={i}
                   className="w-8 h-8 rounded-full overflow-hidden border-2 border-card">
-                  
                     <AppImage
                     src={src}
                     alt={`Happy Sneakers customer ${i + 1}`}
                     width={32}
                     height={32}
+                    loading="lazy"
                     className="object-cover w-full h-full" />
-                  
                   </div>
                 )}
               </div>
               <div>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1" aria-label="5 star rating">
                   {Array.from({ length: 5 })?.map((_, i) =>
-                  <StarIcon key={i} className="w-3.5 h-3.5 text-primary" />
+                  <StarIcon key={i} className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
                   )}
                 </div>
                 <p className="text-xs text-muted-foreground font-medium mt-0.5">
@@ -161,13 +122,12 @@ export default function HeroSection() {
           </div>
 
           {/* Right: Image */}
-          <div ref={imageRef} className="relative z-10">
+          <div className="relative z-10 animate-slide-in-right">
             {/* Spinning ring */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
               <div
                 className="w-full h-full rounded-full border-2 border-dashed border-primary/20 animate-spin-slow"
-                style={{ transform: 'scale(1.05)' }} />
-              
+                style={{ transform: 'scale(1.05)', willChange: 'transform' }} />
             </div>
 
             {/* Main image */}
@@ -181,7 +141,7 @@ export default function HeroSection() {
                 className="object-cover transition-transform duration-1000 group-hover:scale-105" />
               
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" aria-hidden="true" />
 
               {/* Floating glass card */}
               <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4 animate-float">
@@ -207,9 +167,9 @@ export default function HeroSection() {
             <div className="absolute -right-4 top-1/3 glass rounded-2xl p-4 shadow-xl hidden xl:block">
               <p className="text-2xl font-bold text-foreground">2.8k</p>
               <p className="text-xs text-muted-foreground font-semibold mt-0.5">Reviews</p>
-              <div className="flex items-center gap-0.5 mt-1">
+              <div className="flex items-center gap-0.5 mt-1" aria-label="5 star rating">
                 {Array.from({ length: 5 })?.map((_, i) =>
-                <StarIcon key={i} className="w-3 h-3 text-primary" />
+                <StarIcon key={i} className="w-3 h-3 text-primary" aria-hidden="true" />
                 )}
               </div>
             </div>
@@ -217,5 +177,4 @@ export default function HeroSection() {
         </div>
       </div>
     </section>);
-
 }

@@ -18,10 +18,18 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <StatsStrip />
-        <FeaturedSection products={featured} />
-        <SplitCategorySection mens={mens} womens={womens} />
-        <CTABanner />
+        <div className="cv-auto">
+          <StatsStrip />
+        </div>
+        <div className="cv-auto">
+          <FeaturedSection products={featured} />
+        </div>
+        <div className="cv-auto">
+          <SplitCategorySection mens={mens} womens={womens} />
+        </div>
+        <div className="cv-auto">
+          <CTABanner />
+        </div>
       </main>
       <Footer />
     </>
