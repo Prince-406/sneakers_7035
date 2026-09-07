@@ -44,9 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://img.rocket.new" />
         <link rel="preconnect" href="https://img.rocket.new" crossOrigin="anonymous" />
-      
-      <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsneakers78150back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
-      <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></head>
+
+        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsneakers78150back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
+        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></head>
       <body className={plusJakartaSans.className}>
         <CartProvider>{children}</CartProvider>
       </body>

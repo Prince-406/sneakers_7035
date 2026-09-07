@@ -87,14 +87,14 @@ export default function ProductDetailClient({ product }: Props) {
               {/* Prev/Next arrows */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 glass rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 glass rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
                 aria-label="Previous image"
               >
                 <ChevronLeftIcon className="w-5 h-5" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 glass rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 glass rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
                 aria-label="Next image"
               >
                 <ChevronRightIcon className="w-5 h-5" />

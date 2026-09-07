@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useMemo, memo } from 'react';
+import React, { useState, useCallback, useMemo, memo, useEffect } from 'react';
 import Image from 'next/image';
 
 interface AppImageProps {
@@ -43,6 +43,16 @@ const AppImage = memo(function AppImage({
     const [imageSrc, setImageSrc] = useState(src);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+
+    // Sync imageSrc when src prop changes (e.g. gallery navigation)
+    useEffect(() => {
+        if (src !== imageSrc || hasError) {
+            setImageSrc(src);
+            setHasError(false);
+            setIsLoading(true);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [src]);
 
     // Only unoptimize if explicitly requested — allow Next.js to optimize external URLs
     const resolvedUnoptimized = unoptimized;
