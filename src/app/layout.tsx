@@ -6,9 +6,10 @@ import { CartProvider } from '@/context/CartContext';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
 });
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -17,6 +18,7 @@ const dmSerifDisplay = DM_Serif_Display({
   style: ['normal', 'italic'],
   variable: '--font-serif',
   display: 'swap',
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -37,11 +39,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${dmSerifDisplay.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://img.rocket.new" />
+        <link rel="preconnect" href="https://img.rocket.new" crossOrigin="anonymous" />
+
+        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsneakers78150back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
+        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></head>
       <body className={plusJakartaSans.className}>
         <CartProvider>{children}</CartProvider>
-
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsneakers2760back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></body>
+      </body>
     </html>
   );
 }
